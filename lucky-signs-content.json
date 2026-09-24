@@ -1,0 +1,161 @@
+{
+  "business": {
+    "name": "Lucky Signs",
+    "contact_person": "Mohammed Rafeeq",
+    "address": "Shop # 11-4-555 to 556, Bazar Guard, Hyderabad - 500004",
+    "email": "luckysigns4u@gmail.com",
+    "social": {
+      "instagram": "@luckysigns4u",
+      "whatsapp": "Mohammed Rafeeq (QR code in PDF, no plain number given)",
+      "google_reviews": "QR code in PDF, no plain link given",
+      "location": "QR code in PDF, no plain link given"
+    }
+  },
+  "services": [
+    {
+      "name": "UV Printing",
+      "description": "High resolution UV printing for vibrant and lasting prints."
+    },
+    {
+      "name": "Laser Cutting",
+      "description": "Precision laser cutting for perfect shapes and fine details."
+    },
+    {
+      "name": "Plotter Cutting",
+      "description": "Precision plotter cutting for vinyl, stickers and custom designs."
+    },
+    {
+      "name": "Acrylic Bending",
+      "description": "Elegant bending that adds a premium and professional touch."
+    },
+    {
+      "name": "Engraving",
+      "description": "Durable metal marking for long lasting identification."
+    }
+  ],
+  "cover": {
+    "folder": "images/01-cover-services",
+    "image_count": 12,
+    "notes": "Profile photo of Mohammed Rafeeq, Lucky Signs logo, and 5 service-illustration photos (one per service above). Some .png files here are transparency masks paired with the preceding .jpg, not standalone photos."
+  },
+  "gallery_categories": [
+    {
+      "order": 2,
+      "title": "Acrylic Laser Cutting Grills",
+      "slug": "acrylic-laser-cutting-grills",
+      "folder": "images/02-acrylic-laser-cutting-grills",
+      "image_count": 10,
+      "description": "Decorative CNC/laser-cut jaali-pattern acrylic grill panels used as false-ceiling inserts, room dividers, and wall partitions in home interiors."
+    },
+    {
+      "order": 3,
+      "title": "Acrylic Mandir Background",
+      "slug": "acrylic-mandir-background",
+      "folder": "images/03-acrylic-mandir-background",
+      "image_count": 9,
+      "description": "Backlit and engraved acrylic panels used as home-temple (mandir) backgrounds, including deity portraits, Om/Ganesh motifs, and jaali-pattern backlit inserts."
+    },
+    {
+      "order": 4,
+      "title": "Acrylic Bending Products",
+      "slug": "acrylic-bending-products",
+      "folder": "images/04-acrylic-bending-products",
+      "image_count": 8,
+      "description": "Bent-acrylic products: magazine/wall racks, colored table stands, trays with handles, gift boxes, menu/card display stands."
+    },
+    {
+      "order": 5,
+      "title": "Acrylic Memento",
+      "slug": "acrylic-memento",
+      "folder": "images/05-acrylic-memento",
+      "image_count": 9,
+      "description": "Custom-engraved acrylic trophies and mementos for weddings, birthdays, father's day, cycling clubs, and corporate/sports awards."
+    },
+    {
+      "order": 6,
+      "title": "Events Backdrops",
+      "slug": "events-backdrops",
+      "folder": "images/06-events-backdrops",
+      "image_count": 8,
+      "description": "Acrylic monogram/name backdrops and cutout lettering combined with balloon and floral decor for weddings, birthdays, and engagements."
+    },
+    {
+      "order": 7,
+      "title": "Acrylic Engraving Name Plates",
+      "slug": "acrylic-engraving-name-plates",
+      "folder": "images/07-acrylic-engraving-name-plates",
+      "image_count": 5,
+      "description": "Engraved directional/floor signage, table tent cards (e.g. 'table is sanitized'), door/room name plates, and department signage strips."
+    },
+    {
+      "order": 8,
+      "title": "Vinyl Printing",
+      "slug": "vinyl-printing",
+      "folder": "images/08-vinyl-printing",
+      "image_count": 5,
+      "description": "Large-format vinyl printing (Epson printer shown), government emblem/seal prints, and on-site wall installation in a meeting room."
+    },
+    {
+      "order": 9,
+      "title": "Auto Glow Sign Boards",
+      "slug": "auto-glow-sign-boards",
+      "folder": "images/09-auto-glow-sign-boards",
+      "image_count": 8,
+      "description": "Photoluminescent (glow-in-the-dark) safety signage: fire exit, fire extinguisher, fire alarm call point, no smoking, restricted area, parking/no entry signs."
+    },
+    {
+      "order": 10,
+      "title": "Plotter Cutting",
+      "slug": "plotter-cutting",
+      "folder": "images/10-plotter-cutting",
+      "image_count": 6,
+      "description": "Graphtec cutting plotter in action, vinyl lettering/decal application (e.g. store hours), rolls of colored vinyl, and die-cut stickers."
+    },
+    {
+      "order": 11,
+      "title": "School Bus Branding",
+      "slug": "school-bus-branding",
+      "folder": "images/11-school-bus-branding",
+      "image_count": 6,
+      "description": "Vinyl-wrapped exterior branding for school and university buses — examples shown for Delhi Public School Miyapur and Woxsen University."
+    },
+    {
+      "order": 12,
+      "title": "Neon LED Boards",
+      "slug": "neon-led-boards",
+      "folder": "images/12-neon-led-boards",
+      "image_count": 6,
+      "description": "Custom flex-neon name signs, the 'Lucky Signs' shop sign, and event neon ('Happy Birthday', 'Better Together', 'Let's Party')."
+    },
+    {
+      "order": 13,
+      "title": "LED Name Plates",
+      "slug": "led-name-plates",
+      "folder": "images/13-led-name-plates",
+      "image_count": 6,
+      "description": "Backlit acrylic house/office name plates with house numbers and family names (e.g. Kaushalya, Bhat Villa, Md Ibrahim Mansion, Jogendra Singh Meena)."
+    },
+    {
+      "order": 14,
+      "title": "LED Sign Boards",
+      "slug": "led-sign-boards",
+      "folder": "images/14-led-sign-boards",
+      "image_count": 4,
+      "description": "Illuminated storefront/facade signage installed for clients: Tatva Modern Dining, The Broast Factory, Mythri Hospital, Crystal Hospital."
+    },
+    {
+      "order": 15,
+      "title": "Internal Sign Boards",
+      "slug": "internal-sign-boards",
+      "folder": "images/15-internal-sign-boards",
+      "image_count": 6,
+      "description": "Indoor office branding and nameplates — Hopper Automation, a financial advisor's desk plate, a GHMC zonal commissioner plaque, Phoenix Techzone/Aquila, Alankaran Events, Ahimsa Dental Spa."
+    }
+  ],
+  "back_page": {
+    "folder": "images/16-contact-social",
+    "image_count": 9,
+    "notes": "Repeats logo, contact person photo, and contact details. Includes 4 QR codes (Location, Google Reviews, Instagram @luckysigns4u, WhatsApp - Mohammed Rafeeq) as images, plus 'let's get social' and 'thank you for your support' graphic text.",
+    "tagline": "let's get social / thank you for your support"
+  }
+}

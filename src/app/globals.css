@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: var(--font-plus-jakarta-sans), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+
+  --color-brand-navy: #1B2A4A;
+  --color-brand-orange: #E8730C;
+  --color-brand-orange-hover: #D06305;
+  --color-brand-orange-light: #FFF5EB;
+  --color-brand-offwhite: #FAFAF8;
+  --color-brand-surface: #FFFFFF;
+  --color-brand-slate: #55647E;
+  --color-brand-border: #E3E7ED;
+  --color-brand-whatsapp: #25D366;
+}
+
+/* Custom Utilities and Smooth Transitions */
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  background-color: var(--color-brand-offwhite);
+  color: var(--color-brand-navy);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+::selection {
+  background-color: #E8730C;
+  color: #FFFFFF;
+}
+
+/* Vertical Auto-Scroll Marquee Animations */
+@keyframes verticalMarqueeUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes verticalMarqueeDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.animate-marquee-up {
+  animation: verticalMarqueeUp 28s linear infinite;
+}
+
+.animate-marquee-down {
+  animation: verticalMarqueeDown 32s linear infinite;
+}
+
+.animate-marquee-up-slow {
+  animation: verticalMarqueeUp 36s linear infinite;
+}
+
+.pause-hover:hover {
+  animation-play-state: paused;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
