@@ -1,15 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { siteConfig } from "@/data/site-config";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  MessageCircle,
-  Sparkles,
-} from "lucide-react";
+import { ServiceCard } from "@/components/ServiceCard";
+import { Sparkles } from "lucide-react";
 
 export interface ServiceDetailItem {
   id: string;
@@ -156,95 +149,22 @@ export function ServicesSection() {
         </div>
       </div>
 
-      {/* Compact & Clean Service Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        {filteredServices.map((service) => (
-          <div
+      {/* Service Cards Grid (Matching Reference Design) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        {filteredServices.map((service, index) => (
+          <ServiceCard
             key={service.id}
-            className="group relative bg-white rounded-2xl overflow-hidden border border-brand-border/80 shadow-xs hover:shadow-lg hover:border-brand-orange/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
-          >
-            <div>
-              {/* Compact Card Image */}
-              <div className="relative h-40 sm:h-44 w-full overflow-hidden bg-slate-900">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                />
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-none">
-                  <span className="px-2 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-brand-navy text-[10px] font-bold shadow-xs uppercase tracking-wider">
-                    {service.badge}
-                  </span>
-                  <span className="font-mono text-[10px] font-bold text-white bg-black/60 backdrop-blur-md px-2 py-0.5 rounded border border-white/10">
-                    {service.number}
-                  </span>
-                </div>
-
-                <div className="absolute bottom-2 left-2.5 right-2.5">
-                  <span className="text-[9px] font-bold text-amber-300 uppercase tracking-wider block truncate">
-                    {service.tagline}
-                  </span>
-                </div>
-              </div>
-
-              {/* Card Body */}
-              <div className="p-3.5 sm:p-4 space-y-2">
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-sm sm:text-base font-bold font-heading text-brand-navy group-hover:text-brand-orange transition-colors leading-snug">
-                    {service.title}
-                  </h3>
-                  <div className="w-5 h-5 rounded-full bg-brand-offwhite group-hover:bg-brand-orange group-hover:text-white flex items-center justify-center text-brand-navy transition-colors shrink-0 mt-0.5">
-                    <ArrowUpRight className="w-3 h-3" />
-                  </div>
-                </div>
-
-                <p className="text-xs text-brand-slate leading-relaxed line-clamp-2">
-                  {service.description}
-                </p>
-
-                {/* Feature Chips */}
-                <div className="flex flex-wrap gap-1 pt-0.5">
-                  {service.chips.map((chip, i) => (
-                    <span
-                      key={i}
-                      className="inline-flex items-center gap-1 text-[10px] font-medium bg-brand-offwhite text-brand-navy px-1.5 py-0.5 rounded border border-brand-border/60"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-brand-orange shrink-0" />
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Card Action Footer */}
-            <div className="p-3.5 sm:p-4 pt-0 flex items-center justify-between gap-2 border-t border-brand-border/40 mt-1">
-              <Link
-                href={service.href}
-                className="inline-flex items-center gap-1 text-xs font-semibold text-brand-navy group-hover:text-brand-orange transition-colors"
-              >
-                <span>Specifications</span>
-                <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-              </Link>
-
-              <a
-                href={siteConfig.getWhatsAppUrl(`Hi Lucky Signs! I need a quotation for ${service.title}.`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-brand-orange-light hover:bg-brand-orange text-brand-orange hover:text-white text-[10px] font-bold transition-all duration-300 shadow-xs"
-                title="Get WhatsApp Quote"
-                aria-label={`Get WhatsApp quote for ${service.title}`}
-              >
-                <MessageCircle className="w-3 h-3 fill-current" />
-                <span>Quote</span>
-              </a>
-            </div>
-          </div>
+            title={service.title}
+            badge={service.badge}
+            badgeStyleIndex={index}
+            description={service.description}
+            image={service.image}
+            href={service.href}
+            authorName="Mohammed Rafeeq"
+            authorSubtitle="Bazar Guard Workshop"
+            authorInitials="MR"
+            actionText="Details"
+          />
         ))}
       </div>
     </section>

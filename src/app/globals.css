@@ -29,6 +29,15 @@ body {
   overflow-x: clip;
 }
 
+/* Hide scrollbar for Chrome, Safari, Opera, Firefox, and Edge */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;

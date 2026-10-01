@@ -3,137 +3,213 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Cpu,
+  Factory,
+  Rocket,
   ShieldCheck,
-  Award,
   Truck,
   ArrowRight,
   MessageCircle,
 } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 
-export function WhyChooseUsSection() {
-  const cards = [
+interface WhyChooseUsSectionProps {
+  yearsExperience?: string;
+  imageSrc?: string;
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+}
+
+export function WhyChooseUsSection({
+  yearsExperience = "20+",
+  imageSrc = "/images/lucky-signs/01-cover-services/img-000.jpg",
+  eyebrow = "WHY CHOOSE US",
+  heading = "Real people delivering real results.",
+  description = "Direct workshop fabrication in Bazar Guard with industrial CNC laser cutting, direct UV printing, and 20+ years of craftsmanship. We eliminate middlemen markups and deliver computerized millimeter precision across Hyderabad.",
+}: WhyChooseUsSectionProps) {
+  const features = [
     {
-      id: "card-1",
-      number: "01",
-      title: "100% In-House CNC",
-      desc: "Laser cutting, UV flatbed printing, acrylic bending, and channel letter assembly all done in our Bazar Guard workshop.",
-      icon: Cpu,
-      color: "navy", // Navy Blue Theme
-      bgAccent: "bg-[#1B2A4A]",
-      circleBg: "bg-[#1B2A4A]",
-      iconColor: "text-[#1B2A4A]",
+      id: "in-house-cnc",
+      title: "100% In-House Workshop & CNC",
+      description:
+        "Laser cutting, UV flatbed printing, acrylic bending, and channel letter assembly done directly in Bazar Guard—zero broker markups.",
+      icon: Factory,
     },
     {
-      id: "card-2",
-      number: "02",
-      title: "Cast Acrylic & LEDs",
-      desc: "Virgin cast acrylic sheets that resist sunlight yellowing, paired with long-life Samsung LEDs and weather-proof ACP facades.",
-      icon: ShieldCheck,
-      color: "orange", // Bright Orange Theme
-      bgAccent: "bg-[#E8730C]",
-      circleBg: "bg-[#E8730C]",
-      iconColor: "text-[#E8730C]",
-    },
-    {
-      id: "card-3",
-      number: "03",
-      title: "20+ Years Craftsmanship",
-      desc: "Led by Mohammed Rafeeq, translating CorelDRAW vectors, architectural CADs, and sketches to exact millimeter cuts.",
-      icon: Award,
-      color: "navy", // Navy Blue Theme
-      bgAccent: "bg-[#1B2A4A]",
-      circleBg: "bg-[#1B2A4A]",
-      iconColor: "text-[#1B2A4A]",
-    },
-    {
-      id: "card-4",
-      number: "04",
-      title: "Hyderabad-Wide Fitting",
-      desc: "Complete structural frame mounting, safe electrical wiring, and on-site fitting across Hyderabad & Secunderabad.",
-      icon: Truck,
-      color: "orange", // Bright Orange Theme
-      bgAccent: "bg-[#E8730C]",
-      circleBg: "bg-[#E8730C]",
-      iconColor: "text-[#E8730C]",
+      id: "materials-fitting",
+      title: "Certified Materials & Fast Fitting",
+      description:
+        "Sun-resistant virgin cast acrylic, long-life Samsung LEDs, and safe structural on-site installation across Hyderabad & Secunderabad.",
+      icon: Rocket,
     },
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-      {/* Centered Eyebrow & Section Heading */}
-      <div className="text-center max-w-3xl mx-auto space-y-3 mb-14 sm:mb-16">
-        <div className="flex items-center justify-center gap-3 text-xs font-bold uppercase tracking-widest text-[#D97706]">
-          <span className="w-8 h-[2px] bg-[#D97706] inline-block" />
-          <span>WHY CHOOSE US</span>
-          <span className="w-8 h-[2px] bg-[#D97706] inline-block" />
-        </div>
-
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-brand-navy tracking-tight">
-          Crafted In-House with{" "}
-          <span className="text-[#D97706]">Precision &amp; Trust</span>
-        </h2>
-
-        <p className="text-sm sm:text-base text-brand-slate max-w-xl mx-auto font-normal leading-relaxed">
-          Direct workshop fabrication in Bazar Guard with industrial CNC laser, UV printing, and 20+ years of expertise.
-        </p>
-      </div>
-
-      {/* 4-Card 3D Layered Infographic Grid (Exact Reference Anatomy) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-6 pt-4">
-        {cards.map((card) => {
-          const Icon = card.icon;
-
-          return (
-            <div
-              key={card.id}
-              className="relative group transition-transform duration-300 hover:-translate-y-2 cursor-default"
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+      {/* 2-Column Exact Layout from Reference Image */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        
+        {/* =========================================================================
+            LEFT COLUMN: ORGANIC PEBBLE PHOTO + GOLDEN CRESCENT SWOOP + EXPERIENCE BADGE
+            ========================================================================= */}
+        <div className="lg:col-span-6 relative flex justify-center">
+          <div className="relative w-full max-w-[480px] sm:max-w-[510px] aspect-[520/460]">
+            
+            {/* SVG Illustration: Golden-Orange Crescent & Clipped Authentic Workshop Photo */}
+            <svg
+              viewBox="0 0 520 460"
+              className="w-full h-full filter drop-shadow-sm select-none"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              {/* BACK LAYER: Colored Angled 3D Accent Card (Navy Blue / Bright Orange) */}
-              <div
-                className={`absolute inset-0 rounded-[28px] ${card.bgAccent} transform translate-x-2.5 translate-y-2 sm:translate-x-3 sm:translate-y-2.5 transition-transform duration-300 group-hover:translate-x-3.5 group-hover:translate-y-3.5 shadow-md`}
+              <defs>
+                {/* Vibrant Golden-Orange Gradient matching Reference Accent */}
+                <linearGradient
+                  id="goldenCrescentGrad"
+                  x1="0%"
+                  y1="100%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="0%" stopColor="#EA580C" />
+                  <stop offset="35%" stopColor="#F59E0B" />
+                  <stop offset="100%" stopColor="#FFAE19" />
+                </linearGradient>
+
+                {/* Organic Asymmetrical Pebble Clip Path for Workshop Photo */}
+                <clipPath id="organicPhotoClip">
+                  <path d="M 145 95 C 195 55, 290 50, 355 65 C 415 80, 460 120, 472 180 C 485 240, 470 315, 425 370 C 378 425, 295 440, 225 430 C 150 420, 95 385, 85 315 C 75 245, 95 135, 145 95 Z" />
+                </clipPath>
+              </defs>
+
+              {/* 1. Golden-Orange Crescent Accent Swoop (Peeking out Top-Right & Bottom-Left) */}
+              <path
+                d="M 160 65 C 245 15, 360 12, 430 30 C 485 45, 515 100, 508 175 C 502 245, 485 300, 455 335 C 415 410, 310 460, 215 462 C 120 465, 48 430, 42 345 C 38 270, 68 185, 105 135 C 120 115, 140 85, 160 65 Z"
+                fill="url(#goldenCrescentGrad)"
               />
 
-              {/* FRONT LAYER: Clean White Card */}
-              <div className="relative bg-white rounded-[26px] border border-slate-200/90 shadow-lg p-6 sm:p-7 flex flex-col items-center text-center justify-between min-h-[310px] sm:min-h-[330px] z-10">
-                {/* Top Icon */}
-                <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xs">
-                  <Icon className={`w-6 h-6 ${card.iconColor} stroke-[2]`} />
-                </div>
+              {/* 2. Authentic Lucky Signs Workshop Photo clipped into organic shape */}
+              <g clipPath="url(#organicPhotoClip)">
+                <image
+                  href={imageSrc}
+                  x="70"
+                  y="45"
+                  width="415"
+                  height="400"
+                  preserveAspectRatio="xMidYMid slice"
+                />
+                {/* Subtle soft contrast overlay to ensure premium clarity */}
+                <rect
+                  x="70"
+                  y="45"
+                  width="415"
+                  height="400"
+                  fill="black"
+                  opacity="0.04"
+                />
+              </g>
+            </svg>
 
-                {/* Title & Description */}
-                <div className="space-y-2 flex-1 flex flex-col justify-center">
-                  <h3 className="text-base sm:text-lg font-bold font-heading text-brand-navy leading-snug">
-                    {card.title}
-                  </h3>
-                  <p className="text-xs sm:text-[13px] text-brand-slate leading-relaxed font-normal">
-                    {card.desc}
-                  </p>
-                </div>
+            {/* 3. Floating Experience Badge (Top Left, overlapping image & swoop) */}
+            <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-20 w-28 h-28 sm:w-34 sm:h-34 rounded-full bg-white shadow-[0_15px_35px_rgba(0,0,0,0.12)] border border-slate-100/90 flex flex-col items-center justify-center text-center p-2 transition-transform duration-300 hover:scale-105 select-none">
+              <span className="text-3xl sm:text-4xl font-extrabold font-heading text-[#E8730C] leading-none tracking-tight">
+                {yearsExperience}
+              </span>
+              <span className="text-[11px] sm:text-xs font-semibold text-slate-700 leading-tight mt-1 max-w-[85px]">
+                Years of Experience
+              </span>
+            </div>
 
-                {/* Bottom Numbered Colored Circle (Matching 01, 02, 03, 04 in Reference) */}
-                <div className="mt-5">
-                  <div
-                    className={`w-11 h-11 rounded-full ${card.circleBg} text-white font-heading font-extrabold text-sm flex items-center justify-center shadow-md shadow-black/10 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    {card.number}
+          </div>
+        </div>
+
+        {/* =========================================================================
+            RIGHT COLUMN: EYEBROW + DASHED ARROW + HEADLINE + PARAGRAPH + 2 VALUE ITEMS
+            ========================================================================= */}
+        <div className="lg:col-span-6 space-y-6 sm:space-y-7">
+          
+          {/* Eyebrow */}
+          <div>
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#D97706]">
+              {eyebrow}
+            </span>
+          </div>
+
+          {/* Headline with Curved Dashed Arrow from Reference */}
+          <div className="relative">
+            <div className="flex items-start gap-3 sm:gap-4">
+              
+              {/* Whimsical Curved Dashed Hand-Drawn Arrow pointing right towards headline */}
+              <div className="pt-1.5 shrink-0 hidden sm:block">
+                <svg
+                  className="w-10 h-10 sm:w-12 sm:h-12 text-[#1B2A4A]/70"
+                  viewBox="0 0 50 50"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M 8 46 C 12 24, 24 14, 40 16"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeDasharray="3.5 3.5"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M 36 10 L 46 17 L 36 21 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+
+              {/* Main Headline */}
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold font-heading text-[#1B2A4A] tracking-tight leading-[1.18]">
+                {heading}
+              </h2>
+            </div>
+          </div>
+
+          {/* Description Paragraph */}
+          <p className="text-xs sm:text-sm md:text-[15px] text-[#55647E] leading-relaxed max-w-xl font-normal">
+            {description}
+          </p>
+
+          {/* Feature Items with Orange Outline Icons (Matching Reference Layout) */}
+          <div className="space-y-5 sm:space-y-6 pt-1">
+            {features.map((feature) => {
+              const Icon = feature.icon;
+              return (
+                <div key={feature.id} className="flex items-start gap-4 sm:gap-5 group">
+                  {/* Orange Outline Icon Box */}
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl border-2 border-[#E8730C]/50 bg-[#E8730C]/5 flex items-center justify-center text-[#E8730C] shrink-0 transition-colors duration-300 group-hover:bg-[#E8730C] group-hover:text-white">
+                    <Icon className="w-6 h-6 stroke-[1.8]" />
+                  </div>
+
+                  {/* Title & Description */}
+                  <div className="space-y-1">
+                    <h3 className="text-base sm:text-lg font-bold font-heading text-[#1B2A4A] leading-snug">
+                      {feature.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#55647E] leading-relaxed max-w-lg">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
-              </div>
-            </div>
-          );
-        })}
+              );
+            })}
+          </div>
+
+        </div>
+
       </div>
 
-      {/* Bottom Conversion Bar */}
-      <div className="mt-14 sm:mt-18 p-6 sm:p-8 rounded-3xl bg-brand-navy text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10">
+      {/* Bottom Conversion / WhatsApp Contact Bar */}
+      <div className="mt-12 sm:mt-16 p-6 sm:p-8 rounded-3xl bg-brand-navy text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10">
         <div className="space-y-1.5 text-center md:text-left">
           <h4 className="text-lg sm:text-xl font-bold font-heading text-white">
-            Need a fast quote or material advice?
+            Need a fast quote or direct workshop pricing?
           </h4>
           <p className="text-xs sm:text-sm text-white/80 max-w-xl">
-            Send your rough sketch or dimensions on WhatsApp. Mohammed Rafeeq will share sample photos and direct workshop pricing.
+            Send your design or dimensions on WhatsApp. Mohammed Rafeeq will share sample photos and instant estimates.
           </p>
         </div>
 

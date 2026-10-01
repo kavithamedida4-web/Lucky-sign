@@ -52,13 +52,21 @@ export function HowItWorksSection() {
 
       {/* Steps Container */}
       <div className="relative">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 relative z-10">
+        {/* Mobile Swipe Hint */}
+        <div className="flex sm:hidden items-center justify-center gap-1.5 text-[11px] font-semibold text-brand-orange/90 bg-white py-1 px-3 rounded-full w-fit mx-auto border border-brand-orange/15 mb-6 shadow-xs">
+          <span>⟵ Swipe steps horizontally ⟶</span>
+        </div>
+
+        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative z-10 overflow-x-auto sm:overflow-visible pb-4 pt-1 px-4 -mx-4 sm:px-0 sm:mx-0 snap-x snap-mandatory scroll-smooth no-scrollbar">
           {steps.map((item, index) => {
             const Icon = item.icon;
             const isLast = index === steps.length - 1;
 
             return (
-              <div key={item.step} className="relative flex flex-col items-center text-center group">
+              <div
+                key={item.step}
+                className="relative flex flex-col items-center text-center group w-[75vw] max-w-[280px] min-w-[240px] sm:w-auto sm:max-w-none sm:min-w-0 shrink-0 sm:shrink snap-center bg-white/70 sm:bg-transparent rounded-3xl sm:rounded-none p-5 sm:p-0 border border-orange-200/50 sm:border-0 shadow-xs sm:shadow-none"
+              >
                 
                 {/* Step Circle with Floating Numbered Badge */}
                 <div className="relative mb-6">
@@ -115,10 +123,10 @@ export function HowItWorksSection() {
                   {item.desc}
                 </p>
 
-                </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
+        </div>
         </div>
       </div>
     </section>
